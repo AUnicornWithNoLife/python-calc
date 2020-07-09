@@ -1,7 +1,206 @@
-import tkinter as tk 
+import tkinter as tk
+from math import *
+
 m = tk.Tk()
 
 no = ""
+nos = ""
+
+def update():
+    out.delete(1.0, tk.END)
+    out.insert(tk.END, no)
+
+def one():
+    global no, nos
+
+    nom = str(no + "1")
+    no = nom
+    nos = nom
+
+    update()
+
+def two():
+    global no, nos
+
+    nom = str(no + "2")
+    no = nom
+    nos = nom
+
+    update()
+
+def three():
+    global no, nos
+
+    nom = str(no + "3")
+    no = nom
+    nos = nom
+
+    update()
+
+def four():
+    global no, nos
+
+    nom = str(no + "4")
+    no = nom
+    nos = nom
+
+    update()
+
+def five():
+    global no, nos
+
+    nom = str(no + "5")
+    no = nom
+    nos = nom
+
+    update()
+
+def six():
+    global no, nos
+
+    nom = str(no + "6")
+    no = nom
+    nos = nom
+
+    update()
+
+def seven():
+    global no, nos
+
+    nom = str(no + "7")
+    no = nom
+    nos = nom
+
+    update()
+
+def eight():
+    global no, nos
+
+    nom = str(no + "8")
+    no = nom
+    nos = nom
+
+    update()
+
+def nine():
+    global no, nos
+
+    nom = str(no + "9")
+    no = nom
+    nos = nom
+
+    update()
+
+def zero():
+    global no, nos
+
+    nom = str(no + "0")
+    no = nom
+    nos = nom
+
+    update()
+
+def eq():
+    global no, nos
+
+    print(no)
+
+    calc(str(eval(no)))
+
+def calc(n):
+    global no, nos
+
+    print(n)
+
+    no = n
+    nos = no
+    update()
+
+def plus():
+    global no, nos
+
+    nom = str(no + "+")
+    no = nom
+    nos = nom
+
+    update()
+
+def minus():
+    global no, nos
+
+    nom = str(no + "-")
+    no = nom
+    nos = nom
+
+    update()
+
+def times():
+    global no, nos
+
+    nom = str(no + "*")
+    no = nom
+    nos = nom
+
+    update()
+
+def divide():
+    global no, nos
+
+    nom = str(no + "/")
+    no = nom
+    nos = nom
+
+    update()
+
+def back():
+    global no, nos
+
+    nom = no[:-1]
+    no = nom
+    nos = nom
+
+    calc(nom)
+
+def clear():
+    no = ''
+    
+    calc('')
+
+def dec():
+    global no, nos
+
+    nom = str(no + ".")
+    no = nom
+    nos = nom
+
+    update()
+
+def sqrt():
+    global no, nos
+
+    nom = str(no + "sqrt")
+    no = nom
+    nos = nom
+
+    update()
+
+def b1():
+    global no, nos
+
+    nom = str(no + "(")
+    no = nom
+    nos = nom
+
+    update()
+
+def b2():
+    global no, nos
+
+    nom = str(no + ")")
+    no = nom
+    nos = nom
+
+    update()
 
 m.title("Calculator")
 m.wm_iconbitmap('favicon.ico')
@@ -19,104 +218,6 @@ L1.pack()
 L2.pack()
 L3.pack()
 L4.pack()
-
-def one():
-    global no
-    nom = str(no + "1")
-    no = nom
-    update()
-def two():
-    global no
-    nom = str(no + "2")
-    no = nom
-    update()
-def three():
-    global no
-    nom = str(no + "3")
-    no = nom
-    update()
-def four():
-    global no
-    nom = str(no + "4")
-    no = nom
-    update()
-def five():
-    global no
-    nom = str(no + "5")
-    no = nom
-    update()
-def six():
-    global no
-    nom = str(no + "6")
-    no = nom
-    update()
-def seven():
-    global no
-    nom = str(no + "7")
-    no = nom
-    update()
-def eight():
-    global no
-    nom = str(no + "8")
-    no = nom
-    update()
-def nine():
-    global no
-    nom = str(no + "9")
-    no = nom
-    update()
-def zero():
-    global no
-    nom = str(no + "0")
-    no = nom
-    update()
-def eq():
-    global no
-    emm(eval(no))
-def plus():
-    global no
-    nom = str(no + "+")
-    no = nom
-    update()
-def minus():
-    global no
-    nom = str(no + "-")
-    no = nom
-    update()
-def times():
-    global no
-    nom = str(no + "*")
-    no = nom
-    update()
-def divide():
-    global no
-    nom = str(no + "/")
-    no = nom
-    update()
-
-def update():
-    a = len(str(no))
-    b = str(no)[a-1]
-    out.insert(tk.END, b)
-def emm(n):
-    global no
-    no = str(n)
-    out.delete(1.0,2.0)
-    out.insert(tk.END, no)
-
-def back():
-    global no
-    nom = no[:-1]
-    no = nom
-    emm(nom)
-def clear():
-    no = ''
-    emm('')
-def dec():
-    global no
-    nom = str(no + ".")
-    no = nom
-    update()
 
 out = tk.Text(top, height=2, width=32) 
 out.pack()
@@ -151,10 +252,12 @@ divide = tk.Button(L3, text="/", command=divide, width=8, height=4)
 divide.pack(side=tk.LEFT)
 dec = tk.Button(L4, text=".", command=dec, width=8, height=4)
 dec.pack(side=tk.LEFT)
+sqrt = tk.Button(L0, text="SQRT", command=sqrt, width=8, height=4)
+sqrt.pack(side=tk.LEFT)
 equal = tk.Button(L4, text="=", command=eq, width=17, height=4)
 equal.pack(side=tk.LEFT)
 
-clear = tk.Button(L0, text="ac", command=clear, width=17, height=4)
+clear = tk.Button(L0, text="ac", command=clear, width=8, height=4)
 clear.pack(side=tk.LEFT)
 
 back = tk.Button(L0, text="c", command=back, width=8, height=4)
@@ -162,6 +265,11 @@ back.pack(side=tk.LEFT)
 
 plus = tk.Button(L0, text="+", command=plus, width=8, height=4)
 plus.pack(side=tk.LEFT)
+
+b1 = tk.Button(L0, text="(", command=b1, width=8, height=4)
+b1.pack(side=tk.LEFT)
+b2 = tk.Button(L1, text=")", command=b2, width=8, height=4)
+b2.pack(side=tk.LEFT)
 
 
 m.mainloop()
